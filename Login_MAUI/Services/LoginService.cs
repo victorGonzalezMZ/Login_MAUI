@@ -31,6 +31,7 @@ namespace Login_MAUI.Services
             WebAPIUrl = "http://189.254.239.133/LoginAppApi/api/login/autenticar";
 
             var uri = new Uri(WebAPIUrl);
+
             try
             {
                 HttpContent _content = new StringContent(JsonConvert.SerializeObject(user));
@@ -39,14 +40,14 @@ namespace Login_MAUI.Services
 
                 if (response.IsSuccessStatusCode)
                 {
-                    Login _login = new Login();
+                    Login login = new Login();
                     var content = await response.Content.ReadAsStringAsync();
-                    _login = JsonConvert.DeserializeObject<Login>(content);
-                    return _login;
+                    login = JsonConvert.DeserializeObject<Login>(content);
+                    return login;
                 }
             }
-            catch (Exception ex)
-            {
+            catch (Exception ex){
+                throw new Exception(ex.Message, ex);
             }
 
             return null;

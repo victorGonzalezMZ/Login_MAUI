@@ -61,6 +61,10 @@
 
 	<ItemGroup>
 	  <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+	  <PackageReference Include="Syncfusion.Blazor" Version="19.4.0.52" />
+	  <PackageReference Include="Syncfusion.Blazor.Charts" Version="19.4.0.52" />
+	  <PackageReference Include="Syncfusion.Blazor.Core" Version="19.4.0.52" />
+	  <PackageReference Include="Syncfusion.Blazor.Grid" Version="19.4.0.52" />
 	</ItemGroup>
 
 </Project>
